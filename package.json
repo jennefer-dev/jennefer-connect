@@ -7,10 +7,10 @@
   "homepage": "https://jennefer.dev/docs/connected-apps",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jennefer-dev/connect.git"
+    "url": "git+https://github.com/jennefer-dev/jennefer-connect.git"
   },
   "bugs": {
-    "url": "https://github.com/jennefer-dev/connect/issues"
+    "url": "https://github.com/jennefer-dev/jennefer-connect/issues"
   },
   "keywords": [
     "jennefer",

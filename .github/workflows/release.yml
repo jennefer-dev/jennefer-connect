@@ -1,7 +1,7 @@
 # Publishes to npm when a version tag (v0.1.1, v0.2.0, ...) is pushed.
 # Uses npm Trusted Publishing (OIDC): no npm token is stored in GitHub. Set it up once on npmjs.com:
 #   @jennefer-dev/connect > Settings > Trusted Publisher > GitHub Actions
-#   Organization: jennefer-dev, Repository: connect, Workflow: release.yml
+#   Organization: jennefer-dev, Repository: jennefer-connect, Workflow: release.yml
 # npm adds a provenance statement automatically.
 name: Release
 
