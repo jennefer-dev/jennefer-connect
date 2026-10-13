@@ -1,0 +1,31 @@
+# Publishes to npm when a version tag (v0.1.1, v0.2.0, ...) is pushed.
+# Uses npm Trusted Publishing (OIDC): no npm token is stored in GitHub. Set it up once on npmjs.com:
+#   @jennefer-dev/connect > Settings > Trusted Publisher > GitHub Actions
+#   Organization: jennefer-dev, Repository: connect, Workflow: release.yml
+# npm adds a provenance statement automatically.
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      # Trusted Publishing needs npm 11.5.1 or newer.
+      - run: npm install -g npm@latest
+      - run: npm ci
+      - name: Check the tag matches package.json
+        run: test "v$(node -p "require('./package.json').version")" = "${GITHUB_REF_NAME}"
+      - run: npm test
+      - run: npm publish --access public

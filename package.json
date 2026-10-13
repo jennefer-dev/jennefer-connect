@@ -1,0 +1,52 @@
+{
+  "name": "@jennefer-dev/connect",
+  "version": "0.1.0",
+  "description": "Connect your app to Jennefer's local OpenAI-compatible API: sign-in with PKCE, token storage and refresh, and a CLI.",
+  "license": "MIT",
+  "author": "Jennefer",
+  "homepage": "https://jennefer.dev/docs/connected-apps",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jennefer-dev/connect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jennefer-dev/connect/issues"
+  },
+  "keywords": [
+    "jennefer",
+    "openai",
+    "local-llm",
+    "pkce",
+    "oauth"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "node": "./dist/node.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "jennefer-connect": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "typescript": "^5.9.0"
+  }
+}
