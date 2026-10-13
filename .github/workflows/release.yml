@@ -3,6 +3,8 @@
 #   @jennefer-dev/connect > Settings > Trusted Publisher > GitHub Actions
 #   Organization: jennefer-dev, Repository: jennefer-connect, Workflow: release.yml
 # npm adds a provenance statement automatically.
+# This job must stay on a GitHub-hosted runner: npm Trusted Publishing does not support self-hosted runners yet.
+# On a private repo it uses GitHub Actions minutes; on a public repo it is free.
 name: Release
 
 on:
