@@ -1,6 +1,6 @@
 {
   "name": "@jennefer-dev/connect",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Connect your app to Jennefer's local OpenAI-compatible API: sign-in with PKCE, token storage and refresh, and a CLI.",
   "license": "MIT",
   "author": "Jennefer",
